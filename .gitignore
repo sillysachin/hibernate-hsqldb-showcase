@@ -1,0 +1,7 @@
+/target/
+/.classpath
+/.project
+/test.db.log
+/test.db.properties
+/test.db.script
+/.settings/

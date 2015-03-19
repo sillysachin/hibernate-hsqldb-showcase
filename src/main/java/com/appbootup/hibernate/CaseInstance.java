@@ -17,15 +17,31 @@ public class CaseInstance {
 	private Date cseCreatedDttm;
 
 	@Column(nullable = false)
+	private Integer cseCreatedYear;
+
+	@Column(nullable = false)
 	private String cseStatus;
 
 	@Column(nullable = false)
 	private String cseSeverity;
+
+	@Column(nullable = false)
+	private Long cseCost;
+
 	private String cseCreatedUsrId;
 	private String cseTeamId;
 
 	public CaseInstance() {
 		super();
+	}
+
+	public CaseInstance(String cseStatus, String cseSeverity,
+			Date cseCreatedDttm, Integer cseCreatedYear, long cseCost) {
+		this.cseStatus = cseStatus;
+		this.cseSeverity = cseSeverity;
+		this.cseCreatedDttm = cseCreatedDttm;
+		this.cseCost = cseCost;
+		this.setCseCreatedYear(cseCreatedYear);
 	}
 
 	public Long getCseId() {
@@ -60,6 +76,14 @@ public class CaseInstance {
 		this.cseSeverity = cseSeverity;
 	}
 
+	public Long getCseCost() {
+		return cseCost;
+	}
+
+	public void setCseCost(Long cseCost) {
+		this.cseCost = cseCost;
+	}
+
 	public String getCseCreatedUsrId() {
 		return cseCreatedUsrId;
 	}
@@ -74,5 +98,13 @@ public class CaseInstance {
 
 	public void setCseTeamId(String cseTeamId) {
 		this.cseTeamId = cseTeamId;
+	}
+
+	public Integer getCseCreatedYear() {
+		return cseCreatedYear;
+	}
+
+	public void setCseCreatedYear(Integer cseCreatedYear) {
+		this.cseCreatedYear = cseCreatedYear;
 	}
 }
